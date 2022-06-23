@@ -1,0 +1,79 @@
+:root {
+    --header-bg: #242526;
+    --icon-text-color: #b0b3b8;
+    --active-icon-color: #2374e1;
+}
+
+.header-view {
+    display: flex;
+    background-color: var(--header-bg);
+    padding: 5px 20px;
+    justify-content: space-between;
+}
+
+.logo-search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-input {
+    background-color: #3a3b3c;
+    border: 0px;
+    outline: none;
+    padding: 8px 10px 8px 40px;
+    width: 230px;
+    height: 40px;
+    border-radius: 50px;
+}
+.search-input::placeholder {
+    color: var(--icon-text-color);
+}
+.search-icon {
+    position: relative;
+    margin-left: 10px;
+}
+
+.search-icon svg {
+    fill: var(--icon-text-color);
+    position: absolute;
+    left: 10px;
+    top: 20%;
+}
+
+.icons-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icons-container svg {
+    cursor: pointer;
+}
+
+.profile-icons-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.profile-icons-container svg {
+    margin-right: 20px;
+    cursor: pointer;
+}
+.profile-icons-container img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.active-icon {
+    color: var(--active-icon-color);
+    position: relative;
+    height: 100%;
+}
+
+.icon {
+    color: var(--icon-text-color);
+}
