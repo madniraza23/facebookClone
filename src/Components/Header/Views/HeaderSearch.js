@@ -4,11 +4,11 @@ export default function HeaderSearch() {
     return (
         <>
             <span className="search-icon">
-                <SearchIcon />
                 <input
                     className="search-input"
                     placeholder="Search Facebook"
                 />
+                <SearchIcon />
             </span>
         </>
     )

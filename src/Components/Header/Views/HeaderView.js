@@ -10,9 +10,11 @@ import NotificationIcon from "../../../Assets/Images/SVG/notification-icon";
 import WatchIcon from "../../../Assets/Images/SVG/watch-icon";
 import HeaderSearch from "./HeaderSearch";
 
-export default function HeaderView() {
-    const [activeTab, setActiveTab] = React.useState("home")
-
+export default function HeaderView({
+    user,
+    activeTab,
+    setActiveTab,
+}) {
     return (
         <div className="header-view">
             <div className="logo-search">
@@ -56,7 +58,7 @@ export default function HeaderView() {
                     setActiveTab={setActiveTab}
                     color={activeTab === "notification" ? "#2374e1" : "#b0b3b8"}
                 />
-                <img src="http://s4.scoopwhoop.com/anj/kinshuk/461562699.jpg" />
+                <img src={user.profile_picture} alt="profile-img"/>
             </div>
         </div>
     )
