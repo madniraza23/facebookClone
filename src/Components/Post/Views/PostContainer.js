@@ -1,12 +1,15 @@
 import LikeIcon from "../../../Assets/Images/thumb-up.png"
+import { completeDate, secsToDateTime } from "../../../Helpers/Helpers";
 
 export default function PostContainer({
+    user,
     profile_image,
     posted_by,
     posted_on,
     post_content,
     post_comments,
     post_like_count,
+    post_liked
 }) {
     return (
         <div className="post-subcontainer">
@@ -35,15 +38,45 @@ export default function PostContainer({
                     <p className="like-counting">{post_like_count}</p>
                 </div>
                 <div className="post-reactions">
-                    <div>Like</div>
+                    <div className={post_liked && "liked_post"}>Like</div>
                     <div>Comment</div>
                     <div>Share</div>
                 </div>
 
                 <div className="post-comments">
-                    {post_comments?.map((detail, index) => {
+                    <div className="add_comment">
+                        <div className="comment_image">
+                            <img src={user.profile_picture} alt="user_profile" />
+                        </div>
+                        <div className="comment_input">
+                            <input
+                                placeholder="Write a comment"
+                            />
+                        </div>
+                    </div>
+
+                    {post_comments?.map((comment_detail) => {
+                        let time = secsToDateTime(comment_detail.created_at)
                         return (
-                            <>"Madani"</>
+                            <div className="comment_container">
+                                <div className="comment_image">
+                                    <img src={comment_detail.user.profile_picture} alt="user_profile" />
+                                </div>
+                                <div className="comment_div">
+                                    <div className="user_comment_detail">
+                                        <div className="user_name">{comment_detail.user.name}</div>
+                                        <div className="comments_text">
+                                            {comment_detail.text}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="comment_date">
+                                        {completeDate(time)}
+                                    </div>
+                                </div>
+                            </div>
+
                         )
                     })}
                 </div>

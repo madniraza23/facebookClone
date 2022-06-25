@@ -4,19 +4,27 @@
     --active-icon-color: #2374e1;
 }
 
-.user-container {
+.side-menu-container {
+    width: 30%;
     background-color: #18191a;
     min-height: 100vh;
-    width: 30%;
     color: var(--icon-text-color);
-    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-container {
+    border-bottom: #242526 1px solid;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .user-subcontainer {
     display: flex;
     align-items: center;
-    height: fit-content;
     padding: 15px 0 15px 20px;
+    height: fit-content;
 }
 
 .user-subcontainer:hover {
@@ -27,9 +35,12 @@
 .online-user-image {
     width: 56px;
     height: 56px;
-    margin-right: 10px;
+    min-width: 35px;
+    min-height: 35px;
+    margin-right: 3%;
     position: relative;
 }
+
 .online-user-image img {
     height: 100%;
     width: 100%;
@@ -37,6 +48,7 @@
     background-position: center;
     background-size: cover;
 }
+
 .status-indicator {
     background-color: gray;
     position: absolute;
@@ -44,9 +56,48 @@
     right: 5px;
     width: 10px;
     height: 10px;
-    border-radius: 50% ;
+    border-radius: 50%;
 }
 
 .online-status {
     background-color: green;
+}
+
+.side-icons-container {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+}
+
+.side-icons-container svg {
+    margin: 15px 0;
+}
+
+@media (max-width: 992px) {}
+
+@media (max-width: 767px) {
+    .user-subcontainer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .user-container {
+        align-items: center;
+    }
+
+    .side-menu-container {
+        width: 12%;
+    }
+
+    .online-user-name {
+        display: none;
+    }
+
+    .online-user-image {
+        margin-right: 0px;
+    }
+
+    .side-icons-container {
+        display: flex;
+    }
 }

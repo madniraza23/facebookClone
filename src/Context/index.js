@@ -1,5 +1,5 @@
 import React, { createContext } from "react";
-
+import jsonData from "../json/facebook-clone.json"
 export const UserContext = createContext()
 const UserProvider = UserContext.Provider
 
@@ -9,6 +9,11 @@ const AppProvider = ({ children }) => {
         user,
         setUser,
     }
+
+    React.useEffect(() => {
+        setUser(jsonData.user)
+    }, [])
+
     return (
         <UserProvider value={data}>{children}</UserProvider>
     )

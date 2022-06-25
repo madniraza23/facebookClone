@@ -8,7 +8,9 @@ export default function HeaderSearch() {
                     className="search-input"
                     placeholder="Search Facebook"
                 />
-                <SearchIcon />
+                <div className="fb-logo">
+                    <SearchIcon />
+                </div>
             </span>
         </>
     )

@@ -1,11 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import jsonData from "../../json/facebook-clone.json"
 import PostsList from "./Views/PostsLists"
 import "./PostContainer.css"
 import { secsToDateTime } from "../../Helpers/Helpers"
+import { UserContext } from "../../Context"
 
 export default function Post(){
     const [postContent, setPostContent] = React.useState([{}])
+    const { user } = useContext(UserContext)
 
     React.useEffect(()=>{
         let tempPostsContent = []
@@ -19,6 +21,7 @@ export default function Post(){
     return (
             <PostsList
                 postContent={postContent}
+                user={user}
             />
     )
 }

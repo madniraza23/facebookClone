@@ -26,6 +26,7 @@
     height: 40px;
     border-radius: 50px;
 }
+
 .search-input::placeholder {
     color: var(--icon-text-color);
 }
@@ -48,6 +49,7 @@
     justify-content: space-evenly;
 }
 
+
 .icons-container svg {
     cursor: pointer;
 }
@@ -58,6 +60,7 @@
     align-items: center;
     justify-content: flex-end;
 }
+
 .profile-icons-container svg {
     margin-right: 20px;
     cursor: pointer;
@@ -71,9 +74,41 @@
 .active-icon {
     color: var(--active-icon-color);
     position: relative;
-    height: 100%;
 }
 
 .icon {
     color: var(--icon-text-color);
+}
+
+@media (max-width: 992px) {
+    .logo-search {
+        width: 30%;
+    }
+    .search-input {
+        width: 10%;
+        border-radius: 70%;
+    }
+    .icons-container {
+        width: 30%;
+    }
+    .profile-icons-container {
+        width: 30%;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo-search {
+        min-width: 100px;
+    }
+    .search-input {
+        width: 10%;
+        border-radius: 70%;
+    }
+    .icons-container {
+        /* width: 30%; */
+        display: none;
+    }
+    .profile-icons-container {
+        width: 30%;
+    }
 }

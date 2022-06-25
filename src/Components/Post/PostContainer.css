@@ -64,6 +64,7 @@
     display: flex;
     align-items: center;
 }
+
 .like-counts .icon-container {
     width: 15px;
     margin-right: 5px;
@@ -71,4 +72,107 @@
 
 .like-counts .icon-container img {
     width: 100%;
+}
+
+.post-reactions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+}
+
+.post-reactions div {
+    padding: 15px 0px;
+    width: 33%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.post-reactions div:hover {
+    background-color: #3a3b3c;
+}
+
+.liked_post {
+    color: #2374e1;
+    font-weight: 700;
+}
+
+.post-comments {
+    padding: 15px 0px;
+}
+
+.add_comment {
+    display: flex;
+    align-items: center;
+}
+
+.comment_image {
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comment_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.comment_input {
+    width: 100%;
+}
+
+.comment_input input, .comment_div {
+    background-color: #3a3b3c;
+    color: #b0b3b8;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    outline: none;
+    border-radius: 30px;
+}
+
+.comment_input input::placeholder {
+    color: #b0b3b8;
+}
+
+.comment_container {
+    margin: 15px 0 25px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.user_comment_detail .user_name {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.comment_date {
+    position: absolute;
+    width: 100%;
+    left: 60px;
+    top: 100%;
+}
+
+.comment_date {
+    font-size: 13px;
+}
+
+@media (max-width: 992px) {
+    .post-subcontainer {
+        width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .post-container {
+        width: 90%;
+        border: none;
+    }
+
+    .post-subcontainer {
+        width: 100%;
+    }
 }
